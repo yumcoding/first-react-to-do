@@ -1,10 +1,29 @@
 import React, { Component } from "react";
-import ToDoItem from "./ToDoItem";
+import TodoItem from "./TodoItem";
 
-class ToDoList extends Component {
+class TodoList extends Component {
   render() {
-    return <div>Hello from ToDoList</div>;
+    const { items, handleEdit, handleRemove, handleClear } = this.props;
+    return (
+      <div>
+        <ul className="todo-list">
+          {items.map((item) => (
+            <TodoItem
+              key={item.id}
+              title={item.title}
+              handleEdit={() => {
+                handleEdit(item.id);
+              }}
+              handleRemove={() => {
+                handleRemove(item.id);
+              }}
+            />
+          ))}
+        </ul>
+        <button onClick={handleClear}>Clear List</button>
+      </div>
+    );
   }
 }
 
-export default ToDoList;
+export default TodoList;
