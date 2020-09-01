@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 class TodoInput extends Component {
   render() {
-    const { item, handleChange, handleSubmit } = this.props;
+    const { item, handleChange, handleSubmit, editItem } = this.props;
     return (
       <form onSubmit={handleSubmit}>
         <span>
-          <i className="fas fa-pencil-alt"></i>
+          <i className="fas fa-tasks"></i>
         </span>
         <input
           type="text"
@@ -14,7 +14,9 @@ class TodoInput extends Component {
           value={item}
           onChange={handleChange}
         />
-        <button type="submit">Register</button>
+        <button type="submit" disabled={item ? false : true}>
+          {editItem ? "Edit" : "Register"}
+        </button>
       </form>
     );
   }
