@@ -1,0 +1,23 @@
+.input-container {
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+}
+
+.input-icon {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  transition: all 0.3s linear;
+}
+
+.input:focus {
+  outline: 0;
+  border-bottom: 1px solid #dedede;
+}

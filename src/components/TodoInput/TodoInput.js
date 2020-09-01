@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./todoinput.css";
 
 class TodoInput extends Component {
   state = {
@@ -20,13 +21,14 @@ class TodoInput extends Component {
 
   render() {
     return (
-      <div className="todo-input">
+      <div className="input-container">
         <form onSubmit={this.handleSubmit}>
-          <span>
-            <i className="fas fa-plus"></i>
+          <span className="input-icon">
+            <i onClick={this.handleSubmit} className="fas fa-plus"></i>
           </span>
           <input
             name="todo"
+            className="input"
             placeholder="Add To Do"
             value={this.state.todo}
             onChange={this.handleChange}
