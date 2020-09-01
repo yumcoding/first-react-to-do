@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 class TodoList extends Component {
   render() {
-    const { items, handleEdit, handleDelete } = this.props;
+    const { items, handleEdit, handleDelete, handleClear } = this.props;
     return (
       <div className="list-container">
         <ul className="todo-list">
@@ -17,6 +17,7 @@ class TodoList extends Component {
             />
           ))}
         </ul>
+        <button onClick={handleClear}>Clear List</button>
       </div>
     );
   }

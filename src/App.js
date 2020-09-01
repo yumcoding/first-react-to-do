@@ -32,6 +32,10 @@ class App extends Component {
     this.setState({ items: newItems });
   };
 
+  handleClear = () => {
+    this.setState({ items: [] });
+  };
+
   render() {
     const { items } = this.state;
     return (
@@ -41,6 +45,7 @@ class App extends Component {
           items={items}
           handleEdit={this.handleEdit}
           handleDelete={this.handleDelete}
+          handleClear={this.handleClear}
         />
       </div>
     );
