@@ -1,23 +1,38 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 class TodoInput extends Component {
+  state = {
+    id: uuidv4(),
+    todo: "",
+  };
+
+  handleChange = (e) => {
+    this.setState({ todo: e.target.value });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { id, todo } = this.state;
+    this.props.onCreate({ id, todo });
+    this.setState({ id: uuidv4(), todo: "" });
+  };
+
   render() {
-    const { item, handleChange, handleSubmit, editItem } = this.props;
     return (
-      <form onSubmit={handleSubmit}>
-        <span>
-          <i className="fas fa-tasks"></i>
-        </span>
-        <input
-          type="text"
-          placeholder="Enter ToDo"
-          value={item}
-          onChange={handleChange}
-        />
-        <button type="submit" disabled={item ? false : true}>
-          {editItem ? "Edit" : "Register"}
-        </button>
-      </form>
+      <div className="todo-input">
+        <form onSubmit={this.handleSubmit}>
+          <span>
+            <i className="fas fa-plus"></i>
+          </span>
+          <input
+            name="todo"
+            placeholder="Add To Do"
+            value={this.state.todo}
+            onChange={this.handleChange}
+          />
+        </form>
+      </div>
     );
   }
 }
