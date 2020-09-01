@@ -13,6 +13,19 @@ class App extends Component {
     this.setState({ items: items.concat(newItem) });
   };
 
+  handleEdit = ({ id, todo }) => {
+    const { items } = this.state;
+    this.setState({
+      items: items.map((item) => {
+        if (item.id !== id) {
+          return item;
+        } else {
+          return { id, todo };
+        }
+      }),
+    });
+  };
+
   handleDelete = (id) => {
     const { items } = this.state;
     const newItems = items.filter((item) => item.id !== id);
@@ -24,7 +37,11 @@ class App extends Component {
     return (
       <div className="container">
         <TodoInput onCreate={this.handleCreate} />
-        <TodoList items={items} handleDelete={this.handleDelete} />
+        <TodoList
+          items={items}
+          handleEdit={this.handleEdit}
+          handleDelete={this.handleDelete}
+        />
       </div>
     );
   }

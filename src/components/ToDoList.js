@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import TodoItem from "./TodoItem";
 
 class TodoList extends Component {
-  state = {};
-
   render() {
-    const { items, handleDelete } = this.props;
+    const { items, handleEdit, handleDelete } = this.props;
     return (
       <div className="list-container">
         <ul className="todo-list">
@@ -14,6 +12,7 @@ class TodoList extends Component {
               key={item.id}
               id={item.id}
               todo={item.todo}
+              handleEdit={handleEdit}
               handleDelete={handleDelete}
             />
           ))}
