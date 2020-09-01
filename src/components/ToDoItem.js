@@ -2,17 +2,15 @@ import React, { Component } from "react";
 
 class TodoItem extends Component {
   render() {
-    const { title, handleEdit, handleRemove } = this.props;
+    const { todo } = this.props;
     return (
-      <div className="todo-item">
-        <h5>{title}</h5>
-        <span onClick={handleEdit}>
-          <i className="fas fa-pen" />
-        </span>
-        <span onClick={handleRemove}>
-          <i className="fas fa-trash" />
-        </span>
-      </div>
+      <li className="todo-item">
+        <div>{todo}</div>
+        <div>
+          <i className="far fa-edit"></i>
+          <i className="far fa-trash-alt"></i>
+        </div>
+      </li>
     );
   }
 }

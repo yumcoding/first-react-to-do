@@ -3,24 +3,15 @@ import TodoItem from "./TodoItem";
 
 class TodoList extends Component {
   render() {
-    const { items, handleEdit, handleRemove, handleClear } = this.props;
+    const { items } = this.props;
+
     return (
-      <div>
+      <div className="list-container">
         <ul className="todo-list">
           {items.map((item) => (
-            <TodoItem
-              key={item.id}
-              title={item.title}
-              handleEdit={() => {
-                handleEdit(item.id);
-              }}
-              handleRemove={() => {
-                handleRemove(item.id);
-              }}
-            />
+            <TodoItem key={item.id} todo={item.todo} />
           ))}
         </ul>
-        <button onClick={handleClear}>Clear List</button>
       </div>
     );
   }

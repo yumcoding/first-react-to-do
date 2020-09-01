@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
 
 class App extends Component {
   state = {
@@ -13,9 +14,11 @@ class App extends Component {
   };
 
   render() {
+    const { items } = this.state;
     return (
       <div className="container">
         <TodoInput onCreate={this.handleCreate} />
+        <TodoList items={items} />
       </div>
     );
   }
