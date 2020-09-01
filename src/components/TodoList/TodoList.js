@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import TodoItem from "./TodoItem";
-import TodoFilter from "./TodoFilter";
+import TodoItem from "../TodoItem/TodoItem";
+import TodoFilter from "../TodoFilter/TodoFilter";
 
 class TodoList extends Component {
   state = {
