@@ -6,4 +6,5 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  background: url("../src/img/berlin.jpg") no-repeat center center/cover;
 }
