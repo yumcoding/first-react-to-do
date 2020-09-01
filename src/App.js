@@ -31,14 +31,45 @@ class App extends Component {
     });
   };
 
+  handleEdit = (id) => {
+    const { items } = this.state;
+    const oldItems = items.filter((item) => item.id !== id);
+    const selectedItem = items.find((item) => item.id === id);
+    this.setState({
+      items: oldItems,
+      id: id,
+      item: selectedItem.title,
+      editItem: true,
+    });
+  };
+
+  handleRemove = (id) => {
+    const { items } = this.state;
+    const updatedItems = items.filter((item) => item.id !== id);
+    this.setState({
+      items: updatedItems,
+    });
+  };
+
+  handleClear = () => {
+    this.setState({ items: [] });
+  };
+
   render() {
-    const { item } = this.state;
+    const { item, editItem } = this.state;
     return (
       <div>
         <TodoInput
           item={item}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          editItem={editItem}
+        />
+        <TodoList
+          items={this.state.items}
+          handleEdit={this.handleEdit}
+          handleRemove={this.handleRemove}
+          handleClear={this.handleClear}
         />
       </div>
     );
