@@ -1,9 +1,23 @@
 import React, { Component } from "react";
 
-class ToDoInput extends Component {
+class TodoInput extends Component {
   render() {
-    return <div>Hello from ToDoInput</div>;
+    const { item, handleChange, handleSubmit } = this.props;
+    return (
+      <form onSubmit={handleSubmit}>
+        <span>
+          <i className="fas fa-pencil-alt"></i>
+        </span>
+        <input
+          type="text"
+          placeholder="Enter ToDo"
+          value={item}
+          onChange={handleChange}
+        />
+        <button type="submit">Register</button>
+      </form>
+    );
   }
 }
 
-export default ToDoInput;
+export default TodoInput;
