@@ -1,0 +1,20 @@
+.todo-container {
+  width: 100%;
+  margin: 0.5rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* todo text */
+
+.todo-item .todo-text .todo-checkbox {
+  margin-right: 0.5rem;
+}
+
+/* todo edit & delete icon */
+.todo-icons i {
+  cursor: pointer;
+  padding: 0.3rem;
+  font-size: 1.2rem;
+}
