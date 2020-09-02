@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./todofilter.css";
 class TodoFilter extends Component {
   handleChange = (e) => {
     const { onCreate } = this.props;
@@ -9,15 +9,17 @@ class TodoFilter extends Component {
 
   render() {
     return (
-      <form>
-        <label htmlFor="filter">Find Todo</label>
+      <div className="filter">
+        <span className="filter-icon">
+          <i className="fas fa-search"></i>
+        </span>
         <input
           type="text"
-          className="filter"
-          placeholder="Enter Todo"
+          className="filter-input"
+          placeholder="Find To Do"
           onChange={this.handleChange}
         />
-      </form>
+      </div>
     );
   }
 }

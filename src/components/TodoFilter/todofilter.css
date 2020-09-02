@@ -1,0 +1,21 @@
+.filter {
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+}
+
+.filter-icon {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.filter-input {
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+}
+
+.filter-input:focus {
+  outline: 0;
+  border-bottom: 1px solid #dedede;
+}
