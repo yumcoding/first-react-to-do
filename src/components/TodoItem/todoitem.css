@@ -3,10 +3,19 @@
   margin: 0.5rem 0;
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 /* todo text */
+
+.todo-item input {
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.todo-item input:focus {
+  outline: 0;
+}
 
 .todo-item .todo-text .todo-checkbox {
   margin-right: 0.5rem;
