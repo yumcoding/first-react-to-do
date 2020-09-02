@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./todoitem.css";
 class TodoItem extends Component {
   state = {
     editItem: "",
@@ -27,15 +27,25 @@ class TodoItem extends Component {
     const { id, todo, handleDelete } = this.props;
 
     return (
-      <li className="todo-item">
-        <div>
+      <li className="todo-container">
+        <div className="todo-item">
           {editing ? (
-            <input type="text" value={editItem} onChange={this.handleChange} />
+            <input
+              classNmae="todo-input"
+              type="text"
+              value={editItem}
+              onChange={this.handleChange}
+            />
           ) : (
-            todo
+            <div className="todo-text">
+              <span className="todo-checkbox">
+                <i className="far fa-circle"></i>
+              </span>
+              <span className="todo-title">{todo}</span>
+            </div>
           )}
         </div>
-        <div>
+        <div className="todo-icons">
           <i
             onClick={this.handleEditToggle}
             className={editing ? "far fa-check-square" : "far fa-edit"}
