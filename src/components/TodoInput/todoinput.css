@@ -16,6 +16,9 @@
   font-size: 1.5rem;
   transition: all 0.3s linear;
 }
+::placeholder {
+  color: #000;
+}
 
 .input:focus {
   outline: 0;
