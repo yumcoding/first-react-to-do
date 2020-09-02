@@ -48,7 +48,7 @@ class TodoItem extends Component {
         <div className="todo-icons">
           <i
             onClick={this.handleEditToggle}
-            className={editing ? "far fa-check-square" : "far fa-edit"}
+            className={editing ? "fas fa-edit" : "far fa-edit"}
           ></i>
           <i onClick={() => handleDelete(id)} className="far fa-trash-alt"></i>
         </div>
