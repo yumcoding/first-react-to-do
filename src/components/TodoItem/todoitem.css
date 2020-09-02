@@ -21,6 +21,10 @@
   margin-right: 0.5rem;
 }
 
+.todo-item .todo-text .todo-checkbox i {
+  cursor: pointer;
+}
+
 /* todo edit & delete icon */
 .todo-icons i {
   cursor: pointer;

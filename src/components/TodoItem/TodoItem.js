@@ -4,6 +4,7 @@ class TodoItem extends Component {
   state = {
     editItem: "",
     editing: false,
+    checking: false,
   };
 
   handleEditToggle = () => {
@@ -22,8 +23,12 @@ class TodoItem extends Component {
     this.setState({ editItem: e.target.value });
   };
 
+  handleCheckToggle = () => {
+    this.setState({ checking: !this.state.checking });
+  };
+
   render() {
-    const { editItem, editing } = this.state;
+    const { editItem, editing, checking } = this.state;
     const { id, todo, handleDelete } = this.props;
 
     return (
@@ -39,7 +44,10 @@ class TodoItem extends Component {
           ) : (
             <div className="todo-text">
               <span className="todo-checkbox">
-                <i className="far fa-circle"></i>
+                <i
+                  onClick={this.handleCheckToggle}
+                  className={checking ? "fas fa-check-circle" : "far fa-circle"}
+                ></i>
               </span>
               <span className="todo-title">{todo}</span>
             </div>
