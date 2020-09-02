@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TodoItem from "../TodoItem/TodoItem";
 import TodoFilter from "../TodoFilter/TodoFilter";
+import "./todolist.css";
 
 class TodoList extends Component {
   state = {
@@ -54,7 +55,9 @@ class TodoList extends Component {
                 />
               ))}
         </ul>
-        <button onClick={handleClear}>Clear List</button>
+        <button className="clear-btn" onClick={handleClear}>
+          Clear List
+        </button>
       </div>
     );
   }
